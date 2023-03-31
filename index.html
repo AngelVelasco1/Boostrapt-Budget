@@ -20,16 +20,16 @@
 
         <section id="banner" class="d-flex align-items-center justify-content-center text-white row">
             <div class="mt-5">
-                <h2 >Available Budget</h2>
-                <h2>$700000</h2>
+                <h2 class="fs-4">Available Budget</h2>
+                <h2 class="display-5 text-dark">$700000</h2>
             </div>
 
             <div class="mb-4">
-                <div class="d-flex align-items-center justify-content-around bg-info w-25 mx-auto p-3 my-3">
+                <div class="d-flex align-items-center justify-content-around bg-info w-25 mx-auto p-3 my-3 rounded">
                     <div class="">Income</div>
                     <div class="">130.000</div>
                 </div>
-                <div class="d-flex align-items-center justify-content-around bg-danger w-25 mx-auto p-3 ">
+                <div class="d-flex align-items-center justify-content-around bg-danger w-25 mx-auto p-3 rounded">
                     <div>Outgoing</div>
                     <div>130.000</div>
 
@@ -38,62 +38,75 @@
         </section>
 
 
-            <div class="row justify-content-center align-items-center bg-secondary " id="calcule">
+            <div class="row justify-content-center align-items-center bg-secondary" id="calcule">
                 <div class="col-1">
 
                     <div class="input-group ">
                         <label class="input-group-text" for="inputGroupSelect01">+/-</label>
-                        <select class="form-select" id="inputGroupSelect01">
+                        <select class="form-select py-3" id="inputGroupSelect01">
                           <option value="1">+</option>
                           <option value="2">-</option>
                         </select>
                       </div>
                 </div>
                 <div class="col-6">
-                    <div class="input-group ">
+                    <div class="input-group">
                         <span class="input-group-text">$</span>
                         <span class="input-group-text">0.00</span>
-                        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                        <input type="text" class="form-control py-3" aria-label="Dollar amount (with dot and two decimal places)">
                       </div>
                 </div>
              
                 <div class="col-1">
-                    <button type="button" class="btn btn-primary btn-md ">Submit</button>
+                    <button type="button" class="btn btn-primary btn-md py-3 px-5">Submit</button>
 
                 </div>
 
             </div>
 
-        <section id="data">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col" class="text-info">Income</th>
-                    <th scope="col" class="text-danger">Outgoing</th>
-                  
-                </thead>
-                <tbody class="table-group-divider">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
+        </div>
+        <div class="container">
+            <section id="data">
+                <div id="tables" class="row">
+                    <table class="table col mx-5">
+    
+                        <thead>
+                          <tr>
+                            <th scope="col" class="fs-4 text-info">Income</th>     
+                        </tr>             
+                        </thead>
+                        <tbody class="table-group-divider">
+                          <tr>
+                          
+                            <td>Mark</td>
+                            <td>Otto</td>
+    
+                          </tr>
+                        
                 
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="1">Larry the Bird</td>
-                    <td colspan="1">Larry the Bird</td>
-                  </tr>
-                </tbody>
-              </table>
-        </section>
-    </div>
+                        </tbody>
+                      </table>
+                      <table class="table col mx-5">
+                        <thead class="outgoing">
+                            <tr>                
+                                <th scope="col" class="text-danger fs-4">Outgoing</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                          
+                            </tr>
+                         
+                          </tbody>
+        
+                      </table>
+                </div>
+               
+            </section>
+        </div>
+   
 </body>
 
 </html>
