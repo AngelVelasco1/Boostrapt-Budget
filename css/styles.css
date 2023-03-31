@@ -1,11 +1,39 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap');
+:root {
+    --white: #fff;
+    --purple: #3d00d6e8;
+    --black: #00000018;
+}
 * {
     margin: 0;
     padding: 0;
 }
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    padding: 0!important;
+body {
+    color: var(--white);
+    font-family: 'Manrope'!important;
 }
+/* Boostrapt Style */
+.btn-primary {
+        background-color: #4801FF!important;
+        border: none!important;
+}
+.bg-secondary {
+    background-color: rgb(177, 177, 177)!important;
+}
+.table-group-divider {
+    border-top-color: var(--purple) !important;
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: var(--black) !important;
+}
+/* Personal Styles */
 #banner {
-    background-image: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);    height: 500px;
+    background-image: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);    
+    height: 400px;
 
+}
+
+#calcule {
+    height: 90px;
 }
