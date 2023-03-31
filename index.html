@@ -13,6 +13,8 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 
+    <script src="./components/calcular.js" defer></script>
+
 </head>
 
 <body>
@@ -21,17 +23,18 @@
         <section id="banner" class="d-flex align-items-center justify-content-center text-white row">
             <div class="mt-5">
                 <h2 class="fs-4">Available Budget</h2>
-                <h2 class="display-5 text-dark">$700000</h2>
+                <h2 class="display-4 text-dark" id="available">0</h2>
             </div>
 
             <div class="mb-4">
-                <div class="d-flex align-items-center justify-content-around bg-info w-25 mx-auto p-3 my-3 rounded">
+                <div class="d-flex align-items-center justify-content-around bg-info w-25 mx-auto py-3 my-3 rounded">
                     <div class="">Income</div>
-                    <div class="">130.000</div>
+                    <div class="" id="income"></div>
                 </div>
-                <div class="d-flex align-items-center justify-content-around bg-danger w-25 mx-auto p-3 rounded">
+                <div class="d-flex align-items-center justify-content-around bg-danger w-25 mx-auto py-3 rounded">
                     <div>Outgoing</div>
-                    <div>130.000</div>
+                    <div id="outgoing"></div>
+                    <div id="percentage">%0</div>
 
                 </div>
             </div>
@@ -41,11 +44,11 @@
             <div class="row justify-content-center align-items-center bg-secondary" id="calcule">
                 <div class="col-1">
 
-                    <div class="input-group ">
+                    <div class="input-group" >
                         <label class="input-group-text" for="inputGroupSelect01">+/-</label>
-                        <select class="form-select py-3" id="inputGroupSelect01">
-                          <option value="1">+</option>
-                          <option value="2">-</option>
+                        <select class="form-select py-3" id="select">
+                          <option value="plus">+</option>
+                          <option value="minus">-</option>
                         </select>
                       </div>
                 </div>
@@ -53,13 +56,12 @@
                     <div class="input-group">
                         <span class="input-group-text">$</span>
                         <span class="input-group-text">0.00</span>
-                        <input type="text" class="form-control py-3" aria-label="Dollar amount (with dot and two decimal places)">
+                        <input type="text" class="form-control py-3" id="price">
                       </div>
                 </div>
              
                 <div class="col-1">
-                    <button type="button" class="btn btn-primary btn-md py-3 px-5">Submit</button>
-
+                    <button type="button" class="btn btn-primary btn-md py-3 px-5" id="submit">Calcule</button>
                 </div>
 
             </div>

@@ -18,6 +18,10 @@ body {
         background-color: #4801FF!important;
         border: none!important;
 }
+.btn-primary:hover {
+    background-color: rgb(0, 2, 117)!important;
+    border: none!important;
+}
 .bg-secondary {
     background-color: rgb(177, 177, 177)!important;
 }
@@ -28,7 +32,7 @@ tbody, td, tfoot, th, thead, tr {
 /* Personal Styles */
 #banner {
     background-image: linear-gradient(-225deg, #ac32e4f1 0%, #7a18f2f1 48%, #4e08ffe9 100%);    
-    height: 380px;
+    height: 410px;
 
 }
 
