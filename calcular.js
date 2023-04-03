@@ -1,10 +1,14 @@
+import banner from "./components/banner.js" 
+ 
+banner.showBanner();
+
+
 let available = 0;
 let income = 0;
 let outgoing = 0;
 let percentage = 0;
 
 let submit = document.querySelector("#submit");
-let select = document.querySelector("#select");
 let price = document.querySelector("#price");
 
 submit.addEventListener("click", function() {
