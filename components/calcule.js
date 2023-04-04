@@ -2,12 +2,14 @@ import config from "../storage/config.js"
 
 
 export default {
+    
     showCalcule() {
+        
         config.dataCalcule();
 
         Object.assign(this, JSON.parse(localStorage.getItem("Calcule")));
 
-        const worker = new Worker("./storage/wkCalcule.js", {type: "module"});
+        const worker = new Worker("../storage/wkCalcule.js", {type: "module"});
         worker.postMessage({module: "listCalcule", data: this.input});
 
 

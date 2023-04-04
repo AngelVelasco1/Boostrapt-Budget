@@ -19,24 +19,19 @@ export default {
     dataCalcule() {
         localStorage.setItem("Calcule", JSON.stringify({
             input: { 
-              plus: "+",
+                plus: "+",
                 minus: "-",
 
 
                 symbol: "$",
                 amount: "0",
 
-
                 text: "Calcule"    
         },
 
 
-
-
-
-
-
     }))
-    }
+    },
+    
 
 }

@@ -6,7 +6,7 @@ export default {
 
         Object.assign(this, JSON.parse(localStorage.getItem("Banner")));
 
-        const worker = new Worker("./storage/wkBanner.js", {type: "module"});
+        const worker = new Worker("../storage/wkBanner.js", {type: "module"});
         worker.postMessage({module: "listBanner", data: this.banner});
 
         worker.addEventListener("message", (e) => {
