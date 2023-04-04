@@ -1,6 +1,8 @@
 import banner from "./components/banner.js" 
+import calcule from "./components/calcule.js"
  
 banner.showBanner();
+calcule.showCalcule();
 
 
 let available = 0;
