@@ -21,17 +21,26 @@ export default {
             input: { 
                 plus: "+",
                 minus: "-",
-
-
                 symbol: "$",
                 amount: "0",
-
+                
+                id: "submit",
                 text: "Calcule"    
         },
 
 
     }))
     },
+
+    dataData() {
+        localStorage.setItem("Data", JSON.stringify({
+            table: {
+                titleIncome: "Income",
+                titleOutgoing: "Outgoing",
+        },
+    
+    }))
     
 
+}
 }

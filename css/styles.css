@@ -12,10 +12,11 @@
 body {
     color: var(--white);
     font-family: 'Manrope'!important;
+    font-weight: bold!important;
 }
 /* Boostrapt Style */
 .btn-primary {
-        background-color: #4801FF!important;
+        background-color: #4801ff!important;
         border: none!important;
 }
 .btn-primary:hover {
@@ -40,6 +41,14 @@ tbody, td, tfoot, th, thead, tr {
     height: 100px;
     background-color: var(--black)!important;
 }
-.outgoing {
-    color: red!important;
+
+#container {
+height: 500px!important;
+}
+#grafic {
+    margin-block-start: 120px;
+    color:#4801ff;
+    font-weight: bold;
+    display: none;
+    background-color: rgb(236, 65, 102)
 }
