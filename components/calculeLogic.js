@@ -14,12 +14,20 @@ export default {
             let price = parseInt(document.querySelector("#price").value);
 
             if (isNaN(price)) {
-                alert("Enter a Number");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Enter a number',
+                  })
                 return;
             }
 
             else if (price <= 0) {
-                alert("Enter a number greater than 0");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Enter a number greater than 0',
+                  })
                 return;
             }
 

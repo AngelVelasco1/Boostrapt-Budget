@@ -1,51 +1,60 @@
 export default {
     localStorage() {
+        /* Variables */
         let income = [];
         let outgoing = [];
-
         const wk = new Worker("./storage/wkLocalStorage.js", {type: "module"});
-
+        /* Call Functions */  
+        setLocalStorage();
         loadLocalStorage();
-
+        /* Event Update Table*/
         let submit = document.querySelector("#submit");
-
         submit.addEventListener("click", () => {
-            let select = document.querySelector("#select").value;
-            let description = document.querySelector("#type").value;
+      
+            let select = document.querySelector("#select");
             let price = document.querySelector("#price").value;
-       
-            if(!isNaN(parseInt(price)) && price > 0) {
-                wk.postMessage({select: select, description: description, price: parseInt(price)})
-            } else {
-                console.log("none")
+            if (isNaN(price)) {
+                return;
+            }
+
+            else if (price <= 0) {
+                return;
+            }
+            
+            if (select.value === "plus") {
+                let tableIncome = document.querySelector("#tableIncome tbody");
+                let description = document.querySelector("#type").value;
+                
+                let newHead = document.createElement("th")
+                let newRow = document.createElement("tr");
+                let newCell1 = document.createElement("td");
+                let newCell2 = document.createElement("td");
+                
+                newCell1.textContent = description;
+                newCell2.textContent = `$${price}`;
+        
+                newRow.appendChild(newCell1);
+                newRow.appendChild(newCell2);
+                tableIncome.appendChild(newRow);
+            }
+        
+            if (select.value === "minus") {
+                let tableOutgoing = document.querySelector("#tableOutgoing tbody");
+                let description = document.querySelector("#type").value;
+        
+                let newRow = document.createElement("tr");
+                let newCell1 = document.createElement("td");
+                let newCell2 = document.createElement("td");
+        
+                newCell1.textContent = description;
+                newCell2.textContent = `-$${price}`;
+        
+                newRow.appendChild(newCell1);
+                newRow.appendChild(newCell2);
+                tableOutgoing.appendChild(newRow);
             }
         })
-        wk.onmessage = ((e) => {
-            let select = e.data.select;
-            let data = e.data.data;
-            let template = e.data.template;
-            
-            if (select === "load") {
-                let iTemplate = e.data.data.iTemplate;
-                let oTemplate = e.data.data.oTemplate;
-
-                updateTable("tableIncome", iTemplate);
-                updateTable("tableOutgoing", oTemplate);
-            }
-
-            if (select === "plus") {
-                income = data;
-                updateTable("tableIncome", template);
-            } else if (select === "minus") {
-                outgoing = data;
-                updateTable("tableOutgoing", template);
-            }
-        }),
-        
-        function updateTable(id, template) {
-            document.querySelector(`#${id} tbody`).innerHTML = template;
-            setLocalStorage();
-        }
+        /* Functions */
         function setLocalStorage() {
             localStorage.setItem("incomeList", JSON.stringify(income));
             localStorage.setItem("outgoingList", JSON.stringify(outgoing));
