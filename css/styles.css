@@ -14,10 +14,12 @@
 
 }
 * {
+    text-align: center;
     margin: 0;
     padding: 0;
 }
 body {
+    
     text-transform: uppercase;
     color: var(--white);
     font-family: 'Manrope'!important;
@@ -128,7 +130,7 @@ body {
     width: 0;
    }
 tbody, td, tfoot, th, thead, tr {
-    border-color: var(--black) !important;
+    border-color: var(--white) !important;
 }
 /* Personal Styles */
 #banner {
@@ -155,7 +157,7 @@ tbody, td, tfoot, th, thead, tr {
 
 /* Grafic */
 #container {
-    height: 500px!important;
+    height: 600px!important;
 }
 #grafic {
     margin-block-start: 100px;

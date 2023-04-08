@@ -27,17 +27,17 @@ export default {
             },
             series: [
                 {
-                    name: 'Access From',
                     type: 'pie',
                     radius: ['40%', '70%'],
                     avoidLabelOverlap: false,
                     itemStyle: {
-                        borderRadius: 10,
+                        borderRadius: 12,
                         borderColor: '#fff',
                         borderWidth: 2
                     },
                     label: {
                         show: false,
+                        name: "hi",
                         position: 'center'
                     },
                     emphasis: {
