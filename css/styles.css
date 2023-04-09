@@ -222,8 +222,29 @@ tbody, td, tfoot, th, thead, tr {
     -webkit-transition: 100ms;
     transition: 100ms;
   }
+  #div-available #available {
+    transition: 0.4s ease-in;
+  }
+  #div-available #available:hover {
+    cursor:pointer;
+    color: var(--black);
+  }
+  #div-income, #div-outgoing {
+    transition: 0.35s ease-in-out;
+  }
+  #banner #div-income:hover {
+    background-color: var(--income-transparent)!important;
+    cursor: crosshair;
+    transform: scale(1.05)
+
+  }
+  #div-outgoing:hover {
+    background-color: var(--outgoing-transparent)!important;;
+    cursor:crosshair;
+    transform: scale(1.05)
 
 
+  }
 @media screen and (max-width: 880px) {
     #banner {
         height: 100vh;
