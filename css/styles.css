@@ -18,8 +18,7 @@
     margin: 0;
     padding: 0;
 }
-body {
-    
+body {  
     text-transform: uppercase;
     color: var(--white);
     font-family: 'Manrope'!important;
