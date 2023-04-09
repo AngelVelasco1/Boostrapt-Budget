@@ -18,7 +18,7 @@ export default {
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Enter a number',
-                  })
+                })
                 return;
             }
 
@@ -27,7 +27,7 @@ export default {
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Enter a number greater than 0',
-                  })
+                })
                 return;
             }
 
@@ -39,10 +39,10 @@ export default {
                 document.querySelector("#outgoing").innerHTML = "$ " + outgoing;
                 document.querySelector("#percentage").innerHTML = percentage.toFixed(2) + "% ";
 
-                localStorage.setItem('available',  available);
-                localStorage.setItem('income',   income);
-                localStorage.setItem('outgoing',  outgoing);
-                localStorage.setItem('percentage', percentage );
+                localStorage.setItem('available', available);
+                localStorage.setItem('income', income);
+                localStorage.setItem('outgoing', outgoing);
+                localStorage.setItem('percentage', percentage);
 
 
             })
@@ -76,9 +76,9 @@ export default {
             const outgoing = parseInt(localStorage.getItem('outgoing')) || 0;
             const percentage = parseInt(localStorage.getItem('percentage')) || 0;
 
-            document.querySelector("#available").innerHTML = "$"  + available;
-            document.querySelector("#income").innerHTML = "$" +income
-            document.querySelector("#outgoing").innerHTML = "$"+ outgoing
+            document.querySelector("#available").innerHTML = "$" + available;
+            document.querySelector("#income").innerHTML = "$" + income
+            document.querySelector("#outgoing").innerHTML = "$" + outgoing
             document.querySelector("#percentage").innerHTML = percentage.toFixed(2) + "%";
 
         })

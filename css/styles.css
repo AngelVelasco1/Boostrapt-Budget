@@ -1,30 +1,120 @@
 /* General Styles */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap');
+
 :root {
     --white: #fff;
     --purple: #2a0095e8;
     --light-purple: #000000;
     --black-transparent: #00eeff32;
     --black: #000000e7;
-    --income: rgb(13,202,240);
+    --income: rgb(13, 202, 240);
     --income-transparent: rgba(13, 202, 240, 0.4);
 
-    --outgoing: rgb(220,53,69);
+    --outgoing: rgb(220, 53, 69);
     --outgoing-transparent: rgba(220, 53, 70, 0.4);
 
 }
+
 * {
     text-align: center;
     margin: 0;
     padding: 0;
 }
-body {  
+
+body {
     text-transform: uppercase;
     color: var(--white);
-    font-family: 'Manrope'!important;
-    font-weight: bold!important;
+    font-family: 'Manrope' !important;
+    font-weight: bold !important;
 }
-/* Boostrapt Style */
+
+/* Boostrapt StyleS */
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border-color: var(--white) !important;
+}
+
+/* Personal Styles */
+
+/*? BANNER */
+#banner {
+    background: linear-gradient(235deg, #FFFFFF 0%, #000F25 100%), linear-gradient(180deg, #6100FF 0%, #000000 100%), linear-gradient(235deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%), linear-gradient(125deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%);
+    background-blend-mode: soft-light, screen, darken, normal;
+    height: 85vh;
+}
+
+#div-available #available {
+    transition: 0.4s ease-in;
+}
+
+#div-available #available:hover {
+    cursor: pointer;
+    color: var(--black);
+}
+
+#div-income,
+#div-outgoing {
+    transition: 0.35s ease-in-out;
+}
+
+#banner #div-income:hover {
+    background-color: var(--income-transparent) !important;
+    cursor: crosshair;
+    transform: scale(1.05)
+}
+
+#div-outgoing:hover {
+    background-color: var(--outgoing-transparent) !important;
+    ;
+    cursor: crosshair;
+    transform: scale(1.05)
+}
+
+/*? CALCULE INPUT */
+#calcule {
+    height: 103px;
+    background-color: var(--black-transparent) !important;
+}
+
+/*? TABLE */
+#tableIncome thead {
+    color: var(--income);
+}
+
+#tableOutgoing thead {
+    color: var(--outgoing);
+
+}
+
+/*? GRAFIC */
+#container {
+    height: 600px !important;
+}
+
+#grafic {
+    margin-block-start: 100px;
+}
+
+#grafic_title {
+    color: var(--black);
+    font-weight: 800;
+}
+
+#text-income,
+#text-outgoing {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: rgb(255, 64, 105) !important;
+}
+
+/*? BUTTONS  */
 #submit {
     background-color: transparent;
     border: 2px solid #000;
@@ -46,9 +136,9 @@ body {
     transition: all 0.3s ease-in-out;
     user-select: none;
     font-size: 13px;
-   }
-   
-   #submit::before {
+}
+
+#submit::before {
     content: " ";
     width: 1.5625rem;
     height: 2px;
@@ -59,9 +149,9 @@ body {
     transform: translateY(-50%);
     transform-origin: center;
     transition: background 0.3s linear, width 0.3s linear;
-   }
-   
-   #submit .text {
+}
+
+#submit .text {
     font-size: 1.125em;
     line-height: 1.33333em;
     padding-left: 2em;
@@ -71,9 +161,9 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     color: black;
-   }
-   
-   #submit .top-key {
+}
+
+#submit .top-key {
     height: 2px;
     width: 1.5625rem;
     top: -2px;
@@ -81,9 +171,9 @@ body {
     position: absolute;
     background: #e8e8e8;
     transition: width 0.5s ease-out, left 0.3s ease-out;
-   }
-   
-   #submit .bottom-key-1 {
+}
+
+#submit .bottom-key-1 {
     height: 2px;
     width: 1.5625rem;
     right: 1.875rem;
@@ -91,9 +181,9 @@ body {
     position: absolute;
     background: #e8e8e8;
     transition: width 0.5s ease-out, right 0.3s ease-out;
-   }
-   
-   #submit .bottom-key-2 {
+}
+
+#submit .bottom-key-2 {
     height: 2px;
     width: 0.625rem;
     right: 0.625rem;
@@ -101,77 +191,32 @@ body {
     position: absolute;
     background: #e8e8e8;
     transition: width 0.5s ease-out, right 0.3s ease-out;
-   }
-   
-   #submit:hover {
+}
+
+#submit:hover {
     color: white;
     background: black;
-   }
-   
-   #submit:hover::before {
+}
+
+#submit:hover::before {
     width: 0.9375rem;
     background: white;
-   }
-   
-   #submit:hover .text {
+}
+
+#submit:hover .text {
     color: white;
     padding-left: 1.5em;
-   }
-   
-   #submit:hover .top-key {
+}
+
+#submit:hover .top-key {
     left: -2px;
     width: 0px;
-   }
-   
-   #submit:hover .bottom-key-1,
-    #submit:hover .bottom-key-2 {
+}
+
+#submit:hover .bottom-key-1,
+#submit:hover .bottom-key-2 {
     right: 0;
     width: 0;
-   }
-tbody, td, tfoot, th, thead, tr {
-    border-color: var(--white) !important;
-}
-/* Personal Styles */
-#banner {
-    background: linear-gradient(235deg, #FFFFFF 0%, #000F25 100%), linear-gradient(180deg, #6100FF 0%, #000000 100%), linear-gradient(235deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%), linear-gradient(125deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%);
-    background-blend-mode: soft-light, screen, darken, normal; 
-    height: 85vh;
-}
-
-/* Calcule */
-#calcule {
-    height: 103px;
-    background-color: var(--black-transparent)!important;
-}
-
-/* Table */
-#tableIncome thead {
-    color: var(--income);
-}
-#tableOutgoing thead {
-    color: var(--outgoing);
-
-}
-
-
-/* Grafic */
-#container {
-    height: 600px!important;
-}
-#grafic {
-    margin-block-start: 100px;
-}
-#grafic_title {
-    color: var(--black);
-    font-weight: 800;
-}
-#text-income, #text-outgoing {
-    font-size: 18px;
-    font-weight: 800;
-}
-
-.swal2-styled.swal2-confirm {
-    background-color: rgb(255, 64, 105)!important;
 }
 
 #recharge {
@@ -192,124 +237,113 @@ tbody, td, tfoot, th, thead, tr {
     transition: 500ms;
     border-radius: 5px;
     background: linear-gradient(145deg, #2e2d2d, #212121);
-    -webkit-box-shadow: -1px -5px 15px #41465B, 
-                 5px  5px 15px #41465B, 
-      inset      5px  5px 10px #212121, 
-      inset     -5px -5px 10px #212121;
-    box-shadow: -1px -5px 15px #41465B, 
-                 5px  5px 15px #41465B, 
-      inset      5px  5px 10px #212121, 
-      inset     -5px -5px 10px #212121;
-  }
-  
-  #recharge:hover {
+    -webkit-box-shadow: -1px -5px 15px #41465B,
+        5px 5px 15px #41465B,
+        inset 5px 5px 10px #212121,
+        inset -5px -5px 10px #212121;
+    box-shadow: -1px -5px 15px #41465B,
+        5px 5px 15px #41465B,
+        inset 5px 5px 10px #212121,
+        inset -5px -5px 10px #212121;
+}
+
+#recharge:hover {
     -webkit-box-shadow: 1px 1px 13px #20232e,
-                      -1px -1px 13px #545b78;
+        -1px -1px 13px #545b78;
     box-shadow: 1px 1px 13px #20232e,
-               -1px -1px 13px #545b78;
+        -1px -1px 13px #545b78;
     color: #d6d6d6;
     -webkit-transition: 500ms;
     transition: 500ms;
-  }
-  
-  #recharge:active {
+}
+
+#recharge:active {
     -webkit-box-shadow: 1px 1px 13px #20232e,
-                       -1px -1px 33px #545b78;
+        -1px -1px 33px #545b78;
     box-shadow: 1px 1px 13px #20232e,
-               -1px -1px 33px #545b78;
+        -1px -1px 33px #545b78;
     color: #d6d6d6;
     -webkit-transition: 100ms;
     transition: 100ms;
-  }
-  #div-available #available {
-    transition: 0.4s ease-in;
-  }
-  #div-available #available:hover {
-    cursor:pointer;
-    color: var(--black);
-  }
-  #div-income, #div-outgoing {
-    transition: 0.35s ease-in-out;
-  }
-  #banner #div-income:hover {
-    background-color: var(--income-transparent)!important;
-    cursor: crosshair;
-    transform: scale(1.05)
+}
 
-  }
-  #div-outgoing:hover {
-    background-color: var(--outgoing-transparent)!important;;
-    cursor:crosshair;
-    transform: scale(1.05)
-
-
-  }
+/*? RESPONSIVE */
 @media screen and (max-width: 880px) {
     #banner {
         height: 100vh;
     }
-    #banner  #div-income{
-       width: 75%!important;
-    }
-    #banner  #div-outgoing{
-        width: 75%!important;
-     }
-     #calcule { 
-        height: 180px;
-     }
-     .select {
-        width: 25%!important;
-     }
-     .description {
-        order: -1;
-        width: 50%!important
-     }
-     .price {
-        width: 50%!important
-     }
-     .button {
-        width: 25%!important
 
-     }
-     #submit {
+    #banner #div-income {
+        width: 75% !important;
+    }
+
+    #banner #div-outgoing {
+        width: 75% !important;
+    }
+
+    #calcule {
+        height: 180px;
+    }
+
+    .select {
+        width: 25% !important;
+    }
+
+    .description {
+        order: -1;
+        width: 50% !important
+    }
+
+    .price {
+        width: 50% !important
+    }
+
+    .button {
+        width: 25% !important
+    }
+
+    #submit {
         width: 100%;
-     }
-     #div-available h2 {
+    }
+
+    #div-available h2 {
         font-size: 4.5rem;
-     }
-     #tables {
+    }
+
+    #tables {
         display: flex;
         flex-direction: column;
     }
-     
-}@media screen and (max-width: 720px) {
-    #banner {
-        height: 100vh;
-    }
-     #calcule {
+}
 
+@media screen and (max-width: 720px) {
+    #calcule {
         height: 350px;
-     }
-     .select {
+    }
+
+    .select {
         order: -1;
         text-align: center;
-        width: 60%!important;
-     }
-     .description {
-        width: 60%!important
-     }
-     .price {
-        width: 60%!important
+        width: 60% !important;
+    }
 
-     }
-     .button {
-        width: 60%!important
+    .description {
+        width: 60% !important
+    }
 
-     }
-     #submit {
+    .price {
+        width: 60% !important
+    }
+
+    .button {
+        width: 60% !important
+    }
+
+    #submit {
         width: 100%;
-     }
-     #div-available h2 {
+    }
+
+    #div-available h2 {
         font-size: 4.5rem;
-     }
+    }
 }
