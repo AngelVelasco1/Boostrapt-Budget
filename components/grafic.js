@@ -51,8 +51,8 @@ export default {
                         show: false
                     },
                     data: [
-                        { value: income, name: 'Income', itemStyle: { color: "rgb(0,182,260)" } },
                         { value: outgoing, name: 'Outgoing', itemStyle: { color: "rgb(236, 65, 102)" } },
+                        { value: income, name: 'Income', itemStyle: { color: "rgb(0,182,260)" } },
 
                     ]
                 }

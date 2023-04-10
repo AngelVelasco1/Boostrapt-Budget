@@ -34,9 +34,9 @@ export default {
             wk.postMessage({ available, income, outgoing, select, price });
             wk.addEventListener("message", (e) => {
                 const { available, income, outgoing, percentage } = e.data;
-                document.querySelector("#available").innerHTML = "$" + available;
-                document.querySelector("#income").innerHTML = "$ " + income;
-                document.querySelector("#outgoing").innerHTML = "$ " + outgoing;
+                document.querySelector("#available").innerHTML =  + available.toLocaleString('es-CO', {style: 'currency', currency: 'COP'});
+                document.querySelector("#income").innerHTML = + income.toLocaleString('es-CO', {style: 'currency', currency: 'COP'});
+                document.querySelector("#outgoing").innerHTML = + outgoing.toLocaleString('es-CO', {style: 'currency', currency: 'COP'});
                 document.querySelector("#percentage").innerHTML = percentage.toFixed(2) + "% ";
 
                 localStorage.setItem('available', available);
@@ -76,8 +76,8 @@ export default {
             const outgoing = parseInt(localStorage.getItem('outgoing')) || 0;
             const percentage = parseInt(localStorage.getItem('percentage')) || 0;
 
-            document.querySelector("#available").innerHTML = "$" + available;
-            document.querySelector("#income").innerHTML = "$" + income
+            document.querySelector("#available").innerHTML =  + available;
+            document.querySelector("#income").innerHTML =  + income
             document.querySelector("#outgoing").innerHTML = "$" + outgoing
             document.querySelector("#percentage").innerHTML = percentage.toFixed(2) + "%";
 
