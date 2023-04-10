@@ -31,7 +31,7 @@ self.onmessage = (e) => {
         (val, index) => `
             <tr>
               <td>${val.description}</td>
-              <td>${val.price}</td>
+              <td>$ ${val.price}</td>
             </tr>
           `
       )
@@ -42,7 +42,7 @@ self.onmessage = (e) => {
         (val, index) => `
             <tr>
               <td>${val.description}</td>
-              <td>${val.price}</td>
+              <td>-$ ${val.price}</td>
             </tr>
           `
       )

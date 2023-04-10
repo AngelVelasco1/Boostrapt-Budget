@@ -4,9 +4,10 @@
 :root {
     --white: #fff;
     --purple: #2a0095e8;
-    --light-purple: #000000;
+    --light-purple: #825ffee8;
     --black-transparent: #00eeff32;
     --black: #000000e7;
+    --light-black: #0d0d0df2;
     --income: rgb(13, 202, 240);
     --income-transparent: rgba(13, 202, 240, 0.4);
 
@@ -29,6 +30,19 @@ body {
 }
 
 /* Boostrapt StyleS */
+
+.input-group>.form-control, .input-group>.form-floating, .input-group>.form-select {
+    border: none!important;
+
+}
+.input-group-text {
+    background-color: var(--light-black)!important;
+    color: var(--white)!important;
+}
+
+.form-control  {
+    border: none!important;
+}
 tbody,
 td,
 tfoot,
@@ -44,10 +58,10 @@ tr {
 #banner {
     background: linear-gradient(235deg, #FFFFFF 0%, #000F25 100%), linear-gradient(180deg, #6100FF 0%, #000000 100%), linear-gradient(235deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%), linear-gradient(125deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%);
     background-blend-mode: soft-light, screen, darken, normal;
-    height: 90vh;
+    height: 89vh;
 }
 #div-available {
-    margin-top: 10rem!important;
+    margin-top: 8rem!important;
 
 }
 #div-available #available {
