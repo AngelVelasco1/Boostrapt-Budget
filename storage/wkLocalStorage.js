@@ -74,30 +74,23 @@ self.onmessage = (e) => {
         let price = parseInt(e.data.price)
         let newOutgoing = new Outgoing(description, price);
         outgoing.unshift(newOutgoing);
-        const deleteButton = document.querySelectorAll(".delete-button");
-        deleteButton.forEach((button) => {
-            button.addEventListener("click", (e) => {
-                const index = e.target.getAtribute("data-index");
-                const row = document.getElementsByClassName(`rows${index}`);
-                row.parentNode.removeChild(row);
-                outgoing.splice(index, 1);
 
-                const Otemplate = outgoing
-                    .map(
-                        (val, index) => `
+
+        const Otemplate = outgoing
+            .map(
+                (val, index) => `
               <tr class="rows">
                 <td>${val.description}</td>
                 <td>${val.price}</td>
                 <td><button class= "delete-button" data-index="${index}">Delete</button></td>
               </tr>
             `
-                    )
-                    .join("");
+            )
+            .join("");
 
 
-                self.postMessage({ select: "outgoingg", data: outgoing, template: Otemplate });
-            })
-        })
+        self.postMessage({ select: "outgoingg", data: outgoing, template: Otemplate });
+
 
     }
 
