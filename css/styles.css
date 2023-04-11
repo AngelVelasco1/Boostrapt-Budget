@@ -195,7 +195,25 @@ tr {
     background-color: #ff4069 !important;
 }
 
-/*? .delete-buttonS  */
+/* Footer */
+#footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid #ccccccf1;
+    text-transform: capitalize;
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+#footer-img img{
+    width: 150px;
+}
+a {
+    text-decoration: none!important;
+    color: var(--purple)!important;
+}
+
+/*? .delete-buttons  */
 #submit {
     background-color: transparent;
     border: 2px solid #000;

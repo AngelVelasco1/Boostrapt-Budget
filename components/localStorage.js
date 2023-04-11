@@ -98,7 +98,7 @@ export default {
             available += price;
             income += price;
             outgoing -= price;
-            percentage = (outgoing * 100) / income;
+            percentage = outgoing * 100 / income;
             localStorage.setItem("available", available);
             localStorage.setItem("income", income)
             localStorage.setItem("outgoing", outgoing);
