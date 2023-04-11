@@ -16,7 +16,6 @@ class Outgoing {
 }
 
 self.onmessage = (e) => {
-
     let select = e.data.select;
     let description = e.data.description;
 
@@ -39,7 +38,7 @@ self.onmessage = (e) => {
         const Otemplate = outgoing
             .map(
                 (val, index) => `
-            <tr class="rows">
+            <tr>
               <td>${val.description}</td>
               <td>-$ ${val.price}</td>
               <td><button class= "delete-button" data-index="${index}">Delete</button></td>
@@ -47,7 +46,9 @@ self.onmessage = (e) => {
           `
             )
             .join("");
+
         self.postMessage({ select: "load", data: { Itemplate: Itemplate, Otemplate: Otemplate } });
+
     }
 
     if (select === "plus") {
@@ -69,29 +70,23 @@ self.onmessage = (e) => {
         self.postMessage({ select: "incomee", data: income, template: Itemplate });
 
     }
-
     else if (select === "minus") {
         let price = parseInt(e.data.price)
         let newOutgoing = new Outgoing(description, price);
         outgoing.unshift(newOutgoing);
 
-
         const Otemplate = outgoing
             .map(
                 (val, index) => `
-              <tr class="rows">
-                <td>${val.description}</td>
-                <td>${val.price}</td>
-                <td><button class= "delete-button" data-index="${index}">Delete</button></td>
-              </tr>
-            `
+            <tr>
+              <td>${val.description}</td>
+              <td>${val.price}</td>
+              <td><button class= "delete-button" data-index="${index}">Delete</button></td>            </tr>
+          `
             )
             .join("");
 
-
         self.postMessage({ select: "outgoingg", data: outgoing, template: Otemplate });
-
-
     }
 
 };
