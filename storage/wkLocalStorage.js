@@ -41,7 +41,7 @@ self.onmessage = (e) => {
             <tr>
               <td>${val.description}</td>
               <td>-$ ${val.price}</td>
-              <td><button class= "delete-button" data-index="${index}">Delete</button></td>
+              <td><button class= "delete-button "  data-index="${index}"><span>Delete</span></button></td>
             </tr>
           `
             )
@@ -81,12 +81,13 @@ self.onmessage = (e) => {
             <tr>
               <td>${val.description}</td>
               <td>${val.price}</td>
-              <td><button class= "delete-button" data-index="${index}">Delete</button></td>            </tr>
+              <td><button class= "delete-button " data-index="${index}"><span>Delete</span></button></td></tr>
           `
             )
             .join("");
 
         self.postMessage({ select: "outgoingg", data: outgoing, template: Otemplate });
     }
+
 
 };

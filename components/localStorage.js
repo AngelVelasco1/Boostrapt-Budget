@@ -36,13 +36,43 @@ export default {
             }
             if (select === "incomee") {
                 income = data;
-                updateTable("tableIncome", template);
+                updateTable(" tableIncome", template);
             }else if (select === "outgoingg") {
                 outgoing = data;
                 updateTable("tableOutgoing", template);
             }
         });
+        document.addEventListener("click", (e) => {
+            if (e.target.classList.contains('delete-button')) {
 
+                Swal.fire({
+                    title: 'Attention',
+                    text: "If you delete you will not be able to recover your movement.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete'
+                }).then((result) => {
+                    if(result.isConfirmed) {
+                        let tr = e.target.closest('tr');
+                        const buttons = Array.from(document.querySelectorAll(".delete-button"))
+                        const index = buttons.indexOf(e.target)
+                        tr.remove(index, 1);
+
+                        let price = 0;
+                        let outgoing = JSON.parse(localStorage.getItem("outgoingList"));
+                        price = parseInt(outgoing[index]["price"]);
+                        outgoing.splice(index, 1);
+                        localStorage.setItem("outgoingList", JSON.stringify(outgoing));
+                        Oupdate(price);
+                        location.reload();
+
+                    }
+                })
+            }
+
+        })
 
         /* Functions */
         function updateTable(tableId, template) {
@@ -58,7 +88,19 @@ export default {
         function loadLocalStorage() {
             income = JSON.parse(localStorage.getItem("incomeList")) || [];
             outgoing = JSON.parse(localStorage.getItem("outgoingList")) || [];
-            wk.postMessage({ select: "load", data: { income: income, outgoing: outgoing } })
+            wk.postMessage({ select: "load", data: { income: income, outgoing: outgoing } });
+        }
+    
+        function Oupdate(price) {
+          let available = parseInt(localStorage.getItem("available"))
+          let outgoing = parseInt(localStorage.getItem("outgoing"));
+            let percentage = localStorage.getItem("percentage");
+
+          available += price;
+          outgoing -= price;
+          percentage = (outgoing * 100) / income;
+          localStorage.setItem("available", available);
+          localStorage.setItem("outgoing", outgoing);
         }
     }
-} 
+};
