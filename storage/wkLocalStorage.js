@@ -30,6 +30,7 @@ self.onmessage = (e) => {
             <tr>
               <td>${val.description}</td>
               <td>$ ${val.price}</td>
+
             </tr>
           `
             )

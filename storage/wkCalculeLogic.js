@@ -1,5 +1,4 @@
 self.addEventListener("message", (e) => {
-    console.log("Datos recibidos en el worker: ", e.data);
 
     let available = parseInt(e.data.available) || 0;
     let income = parseInt(e.data.income) || 0;

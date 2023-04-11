@@ -21,7 +21,7 @@ export default {
                 ("nada");
             }
         });
-        
+
         wk.onmessage = ((e) => {
             let select = e.data.select;
             let data = e.data.data;
@@ -36,25 +36,24 @@ export default {
             }
             if (select === "incomee") {
                 income = data;
-                updateTable(" tableIncome", template);
-            }else if (select === "outgoingg") {
+                updateTable("tableIncome", template);
+            } else if (select === "outgoingg") {
                 outgoing = data;
                 updateTable("tableOutgoing", template);
             }
         });
         document.addEventListener("click", (e) => {
             if (e.target.classList.contains('delete-button')) {
-
                 Swal.fire({
                     title: 'Attention',
                     text: "If you delete you will not be able to recover your movement.",
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
+                    confirmButtonColor: '#40ffb9',
+                    cancelButtonColor: '#ff4069',
                     confirmButtonText: 'Yes, delete'
                 }).then((result) => {
-                    if(result.isConfirmed) {
+                    if (result.isConfirmed) {
                         let tr = e.target.closest('tr');
                         const buttons = Array.from(document.querySelectorAll(".delete-button"))
                         const index = buttons.indexOf(e.target)
@@ -67,7 +66,6 @@ export default {
                         localStorage.setItem("outgoingList", JSON.stringify(outgoing));
                         Oupdate(price);
                         location.reload();
-
                     }
                 })
             }
@@ -90,17 +88,21 @@ export default {
             outgoing = JSON.parse(localStorage.getItem("outgoingList")) || [];
             wk.postMessage({ select: "load", data: { income: income, outgoing: outgoing } });
         }
-    
+
         function Oupdate(price) {
-          let available = parseInt(localStorage.getItem("available"))
-          let outgoing = parseInt(localStorage.getItem("outgoing"));
+            let available = parseInt(localStorage.getItem("available"))
+            let outgoing = parseInt(localStorage.getItem("outgoing"));
+            let income = parseInt(localStorage.getItem("income"))
             let percentage = localStorage.getItem("percentage");
 
-          available += price;
-          outgoing -= price;
-          percentage = (outgoing * 100) / income;
-          localStorage.setItem("available", available);
-          localStorage.setItem("outgoing", outgoing);
+            available += price;
+            income += price;
+            outgoing -= price;
+            percentage = (outgoing * 100) / income;
+            localStorage.setItem("available", available);
+            localStorage.setItem("income", income)
+            localStorage.setItem("outgoing", outgoing);
+            localStorage.setItem("percentage", percentage);
         }
     }
 };
