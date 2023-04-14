@@ -4,8 +4,8 @@ let outgoing = [];
 
 class Income {
     constructor(description, price) {
-        this['description'] = description;
-        this['price'] = price;
+        this.description = description;
+        this.price = price;
     }
 }
 class Outgoing {
